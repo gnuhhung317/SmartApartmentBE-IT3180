@@ -16,7 +16,7 @@ public class MailServiceImpl implements MailService {
 
     private final String FROM = "mailtrap@demomailtrap.com";
 
-    private final String VERIFY_URL = "http://localhost:8080/auth";
+    private final String VERIFY_URL = "http://localhost:8080/api/v1/auth";
 
     private final JavaMailSender mailSender;
 

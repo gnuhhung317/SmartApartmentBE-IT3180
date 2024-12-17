@@ -15,10 +15,12 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -84,9 +86,7 @@ public class AuthServiceImpl implements AuthService {
         UsernamePasswordAuthenticationToken authenticateToken = new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword());
         Authentication authentication = authenticationManager.authenticate(authenticateToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        User user = (User) authentication.getPrincipal();
-        log.info("login user {}", user);
-
+        User user = userRepository.findByUsername(loginRequest.getUsername()).orElseThrow(() -> new RuntimeException("User not found"));
         return jwtProvider.generateToken(user);
     }
 
@@ -107,5 +107,11 @@ public class AuthServiceImpl implements AuthService {
             return "Xác minh thành công!";
         }
         return "";
+    }
+
+    @Override
+    public List<LoginRequest> getAllUser() {
+        List<User> users = userRepository.findAll();
+        return users.stream().map(user -> new LoginRequest().setUsername(user.getUsername()).setPassword(user.getPassword())).toList();
     }
 }

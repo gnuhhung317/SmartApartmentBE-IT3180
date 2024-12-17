@@ -37,7 +37,7 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
+        return NoOpPasswordEncoder.getInstance();
     }
 
     @Bean
@@ -45,7 +45,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .cors(x -> x.configurationSource(request -> corsConfiguration()))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**","/swagger-ui/**").permitAll()
+                        .requestMatchers("/api/v1/auth/**","/swagger-ui/**").permitAll()
                         .anyRequest().permitAll()
                         )
                 .authenticationProvider(authenticationProvider());

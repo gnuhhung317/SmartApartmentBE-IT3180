@@ -1,7 +1,8 @@
-package com.hust.smart_apartment.entity;
+package com.hust.smart_apartment.dto.response;
 
 import com.hust.smart_apartment.constants.HouseholdRole;
 import com.hust.smart_apartment.constants.LivingType;
+import com.hust.smart_apartment.entity.Apartment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,17 +10,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
-
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "residents")
-public class Resident extends BaseEntity {
+@AllArgsConstructor
+public class ResidentResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long residentId;
 
     private String fullName;
@@ -32,7 +28,4 @@ public class Resident extends BaseEntity {
 
     private HouseholdRole householdRole;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "apartment_id")
-    private Apartment livingApartment;
 }

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -27,4 +29,7 @@ public class Apartment {
     @ManyToOne
     @JoinColumn(name = "resident_id")
     private Resident owner;
+
+    @OneToMany(mappedBy = "livingApartment")
+    private List<Resident> residents;
 }

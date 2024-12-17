@@ -4,6 +4,8 @@ import com.hust.smart_apartment.dto.request.LoginRequest;
 import com.hust.smart_apartment.dto.request.RegisterRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface AuthService {
 
@@ -13,6 +15,8 @@ public interface AuthService {
     void logout();
 
     String verifyRegister(String token);
+
+    List<LoginRequest> getAllUser();
 
 
 }
