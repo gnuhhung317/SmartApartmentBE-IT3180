@@ -3,7 +3,7 @@ package com.hust.smart_apartment.constants;
 import lombok.Getter;
 
 @Getter
-public enum HouseholdRole {
+public enum HouseholdRole implements CodeNameProvider {
     CHILD(0,"Con"),
     MARRIAGE(1,"Vợ chồng"),
     PARENT(2,"Bố Mẹ");

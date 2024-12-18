@@ -1,16 +1,19 @@
 package com.hust.smart_apartment.dto.response;
 
+import com.hust.smart_apartment.annotations.QuickSearchDomain;
+import com.hust.smart_apartment.dto.AbstractAuditingDto;
 import com.hust.smart_apartment.entity.Resident;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
 @Builder
-public class ApartmentResponse {
+@AllArgsConstructor
+@NoArgsConstructor
+@QuickSearchDomain(tableName = "apartments")
+public class ApartmentResponse extends AbstractAuditingDto {
     private Long apartmentId;
 
     private String name;

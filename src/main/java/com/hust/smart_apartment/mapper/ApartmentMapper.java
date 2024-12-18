@@ -5,7 +5,7 @@ import com.hust.smart_apartment.dto.response.ApartmentResponse;
 import com.hust.smart_apartment.entity.Apartment;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public abstract class ApartmentMapper extends BaseMapper<ApartmentRequest, ApartmentResponse, Apartment> {
     @Override
     public abstract ApartmentResponse entityToResponse(Apartment apartment) ;
