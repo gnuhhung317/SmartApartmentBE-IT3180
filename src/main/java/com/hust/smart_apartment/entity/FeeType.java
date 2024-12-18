@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 @Table(name = "fee_types")
-public class FeeType {
+public class FeeType extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long feeTypeId;

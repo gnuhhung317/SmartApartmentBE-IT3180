@@ -11,10 +11,7 @@ import com.hust.smart_apartment.repository.SearchRepository;
 import com.hust.smart_apartment.service.BuildingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
-
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

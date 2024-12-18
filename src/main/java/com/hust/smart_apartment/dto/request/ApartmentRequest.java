@@ -15,7 +15,7 @@ public class ApartmentRequest {
 
     private Long area;
 
-    private Long ownerId;
+    private ResidentRequest owner;
 
     private List<ResidentRequest> residents;
 }

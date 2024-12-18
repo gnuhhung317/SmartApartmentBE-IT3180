@@ -32,6 +32,8 @@ public class Resident extends BaseEntity {
 
     private HouseholdRole householdRole;
 
+    private String avatar = "https://pic.re/image";
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "apartment_id")
     private Apartment livingApartment;
