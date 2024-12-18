@@ -32,4 +32,8 @@ public class Apartment {
 
     @OneToMany(mappedBy = "livingApartment")
     private List<Resident> residents;
+
+    @ManyToOne
+    @JoinColumn(name = "floor_id")
+    private Floor floor;
 }

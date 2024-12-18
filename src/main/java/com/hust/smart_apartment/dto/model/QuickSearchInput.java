@@ -1,7 +1,6 @@
 package com.hust.smart_apartment.dto.model;
 
 import com.hust.smart_apartment.constants.QuickSearchKeyOption;
-import vn.rox.tntech.tfm.constants.QuickSearchKeyOption;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
