@@ -27,7 +27,7 @@ public class ResidentController {
         return BaseResponse.ok(residentService.getById(id));
     }
 
-    @PostMapping("/{apartmentId}/add-resident")
+    @PostMapping("/to-apartment/{apartmentId}")
     public BaseResponse<ResidentResponse> addResidentToApartment(@RequestBody ResidentRequest request, @PathVariable("apartmentId") Long apartmentId) {
         return BaseResponse.ok(residentService.insertToApartment(request, apartmentId));
     }
