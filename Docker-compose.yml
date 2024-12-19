@@ -15,10 +15,10 @@ services:
       - my-network
 
   app:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-    image: gnuhhung317/smart-apt
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: smart-apt:v1.0
     container_name: spring-boot-app
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-apt:3306/smart_apt

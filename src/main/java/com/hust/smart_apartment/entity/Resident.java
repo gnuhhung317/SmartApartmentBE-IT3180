@@ -26,13 +26,18 @@ public class Resident extends BaseEntity {
 
     private Date dateOfBirth;
 
+    @Column(name = "identity_card_number",nullable = false)
     private String identityCardNumber;
 
+    @Column(name = "current_living_type",nullable = false)
     private LivingType currentLivingType;
 
+    @Column(name = "household_role",nullable = false)
     private HouseholdRole householdRole;
 
+    private String avatar = "https://pic.re/image";
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "apartment_id")
+    @JoinColumn(name = "apartment_id",nullable = false)
     private Apartment livingApartment;
 }

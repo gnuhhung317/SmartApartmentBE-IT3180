@@ -11,5 +11,5 @@ public class FloorRequest {
     private Long id;
     private String name;
     private Integer floorNumber;
-    private String buildingId;
+    private Long buildingId;
 }

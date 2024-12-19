@@ -4,8 +4,10 @@ import com.hust.smart_apartment.dto.BaseResponse;
 import com.hust.smart_apartment.dto.ModifyDto;
 import com.hust.smart_apartment.dto.request.ApartmentRequest;
 import com.hust.smart_apartment.dto.request.SearchRequest;
+import com.hust.smart_apartment.dto.request.UpdateApartmentRequest;
 import com.hust.smart_apartment.dto.response.ApartmentResponse;
 import com.hust.smart_apartment.service.ApartmentService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +31,8 @@ public class ApartmentController {
     }
 
     @PutMapping("/{id}")
-    public BaseResponse<ApartmentResponse> update(@PathVariable Long id, @RequestBody ApartmentRequest request) {
+    @Operation(summary = "api này để update cư dân nhé")
+    public BaseResponse<ApartmentResponse> update(@PathVariable Long id, @RequestBody UpdateApartmentRequest request) {
         ApartmentResponse response = apartmentService.update(id, request);
         return BaseResponse.ok(response);
     }

@@ -6,22 +6,25 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "fee_types")
-public class FeeType extends BaseEntity {
+@Table(name = "vehicle_types")
+@Accessors(chain = true)
+public class VehicleType {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long feeTypeId;
+    private Long vehicleTypeId;
 
+    @Column(name = "name",nullable = false)
     @Enumerated(EnumType.STRING)
-    private FeeCategory category;
+    private FeeCategory feeCategory;
 
+    @Column(name = "unit_price",nullable = false)
     private Integer unitPrice;
-
-    private String description;
 }
