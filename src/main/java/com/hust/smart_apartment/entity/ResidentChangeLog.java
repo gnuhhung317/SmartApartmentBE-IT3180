@@ -1,6 +1,8 @@
 package com.hust.smart_apartment.entity;
 
 import com.hust.smart_apartment.constants.LivingType;
+import com.hust.smart_apartment.dto.response.ApartmentResponse;
+import com.hust.smart_apartment.dto.response.ResidentResponse;
 import jakarta.persistence.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +13,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -25,13 +32,11 @@ public class ResidentChangeLog {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "resident_id")
-    private Resident resident;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private ResidentResponse resident;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "apartment_id")
-    private Apartment apartment;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private ApartmentResponse apartment;
 
     @Column(name = "last_type")
     private LivingType lastType;
@@ -40,7 +45,7 @@ public class ResidentChangeLog {
     private LivingType changeType;
 
     @Column(name = "change_date")
-    private String changeDate;
+    private LocalDateTime changeDate;
 
     @Column(name = "notes")
     private String notes;

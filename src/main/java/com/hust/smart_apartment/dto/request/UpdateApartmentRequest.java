@@ -1,5 +1,15 @@
 package com.hust.smart_apartment.dto.request;
 
-public class UpdateAparmentRequest {
-    
+import com.hust.smart_apartment.entity.Resident;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
+
+@Getter
+@Setter
+public class UpdateApartmentRequest {
+
+    Resident owner;
+    List<ResidentRequest> residents;
 }

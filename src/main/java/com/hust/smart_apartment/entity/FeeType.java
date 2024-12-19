@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -23,7 +21,7 @@ public class FeeType extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private FeeCategory category;
 
-    private BigDecimal unitPrice;
+    private Integer unitPrice;
 
     private String description;
 }

@@ -35,7 +35,7 @@ public class FloorServiceImpl implements FloorService {
         }
 
         // Map FloorRequest to Floor entity (you may need to create a mapping layer or use something like MapStruct)
-        Building building = buildingRepository.findById(Long.parseLong(request.getBuildingId()))
+        Building building = buildingRepository.findById(request.getBuildingId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid building ID"));
 
         Floor floor = floorMapper.requestToEntity(request);

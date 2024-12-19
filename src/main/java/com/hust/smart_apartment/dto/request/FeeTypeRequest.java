@@ -1,15 +1,14 @@
 package com.hust.smart_apartment.dto.request;
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class FeeTypeRequest {
     private Long feeTypeId;
-    private BigDecimal unitPrice;
+    private Integer unitPrice;
     private String description;
 }

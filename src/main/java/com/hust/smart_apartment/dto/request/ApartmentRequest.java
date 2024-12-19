@@ -3,7 +3,6 @@ package com.hust.smart_apartment.dto.request;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
 
 @Getter
 @Setter
@@ -15,7 +14,5 @@ public class ApartmentRequest {
 
     private Long area;
 
-    private ResidentRequest owner;
-
-    private List<ResidentRequest> residents;
+    private Long floorId;
 }
