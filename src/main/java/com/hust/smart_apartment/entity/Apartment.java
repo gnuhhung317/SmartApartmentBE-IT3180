@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "apartments")
-public class Apartment {
+public class Apartment extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,18 @@ public class Apartment {
     @OneToMany(mappedBy = "livingApartment")
     private List<Resident> residents;
 
+    @OneToMany(mappedBy = "appartment")
+    private List<Vehicle> vehicles;
+
     @ManyToOne
     @JoinColumn(name = "floor_id")
     private Floor floor;
+
+    @ManyToOne
+    @JoinColumn(name = "management_fee_id")
+    private FeeType managementFee;
+
+    @ManyToOne
+    @JoinColumn(name = "service_fee_id")
+    private FeeType serviceFee;
 }

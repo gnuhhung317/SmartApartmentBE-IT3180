@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
 @Entity
 @Table(name = "vehicle_types")
 @Accessors(chain = true)
-public class VehicleType {
+public class VehicleType extends BaseEntity{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

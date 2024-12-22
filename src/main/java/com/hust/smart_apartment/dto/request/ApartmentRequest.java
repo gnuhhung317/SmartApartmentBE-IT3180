@@ -15,4 +15,6 @@ public class ApartmentRequest {
     private Long area;
 
     private Long floorId;
+
+    private Long feeTypeId;
 }

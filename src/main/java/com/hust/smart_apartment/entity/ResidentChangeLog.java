@@ -25,7 +25,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name = "resident_change_log")
-public class ResidentChangeLog {
+public class ResidentChangeLog extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
