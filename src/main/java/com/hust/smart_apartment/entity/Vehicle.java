@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
 @Entity
 @Table(name = "vehicles")
 @Accessors(chain = true)
-public class Vehicle {
+public class Vehicle extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +30,7 @@ public class Vehicle {
     @JoinColumn(name = "vehicle_type_id")
     private VehicleType vehicleType;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "apartment_id")
     private Apartment apartment;
 

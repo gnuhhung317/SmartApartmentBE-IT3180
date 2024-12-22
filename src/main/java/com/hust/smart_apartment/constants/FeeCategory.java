@@ -11,5 +11,5 @@ public enum FeeCategory {
     PARKING_MOTORCYCLE("Phí gửi xe máy"),
     PARKING_CAR("Phí gửi ô tô"),;
 
-    private final String description;
+    private final String name;
 }

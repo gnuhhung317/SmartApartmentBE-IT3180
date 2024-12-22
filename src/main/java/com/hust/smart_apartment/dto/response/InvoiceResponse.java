@@ -1,32 +1,26 @@
-package com.hust.smart_apartment.entity;
+package com.hust.smart_apartment.dto.response;
 
+import com.hust.smart_apartment.annotations.QuickSearchDomain;
 import com.hust.smart_apartment.dto.FeeInvoiceDto;
+import com.hust.smart_apartment.entity.Apartment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-@Entity
-@Table(name = "invoices")
-public class Invoice extends BaseEntity {
+@AllArgsConstructor
+public class InvoiceResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "apartment_id")
-    private Apartment apartment;
+    private ApartmentResponse apartment;
 
     private LocalDateTime dueDate;
 
@@ -42,6 +36,5 @@ public class Invoice extends BaseEntity {
 
     private String status;
 
-    @JdbcTypeCode(SqlTypes.JSON)
     private List<FeeInvoiceDto> fees;
 }
