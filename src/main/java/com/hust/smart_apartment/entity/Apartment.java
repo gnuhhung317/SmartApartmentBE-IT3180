@@ -33,7 +33,7 @@ public class Apartment extends BaseEntity{
     @OneToMany(mappedBy = "livingApartment")
     private List<Resident> residents;
 
-    @OneToMany(mappedBy = "appartment")
+    @OneToMany(mappedBy = "apartment")
     private List<Vehicle> vehicles;
 
     @ManyToOne
