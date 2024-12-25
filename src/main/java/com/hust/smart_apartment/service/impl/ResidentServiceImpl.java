@@ -6,6 +6,7 @@ import com.hust.smart_apartment.dto.request.ResidentRequest;
 import com.hust.smart_apartment.dto.request.SearchRequest;
 import com.hust.smart_apartment.dto.response.ResidentChangeLogResponse;
 import com.hust.smart_apartment.dto.response.ResidentResponse;
+import com.hust.smart_apartment.entity.Apartment;
 import com.hust.smart_apartment.entity.Resident;
 import com.hust.smart_apartment.entity.ResidentChangeLog;
 import com.hust.smart_apartment.mapper.ApartmentMapper;
@@ -22,7 +23,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -77,25 +79,30 @@ public class ResidentServiceImpl implements ResidentService {
 
     @Override
     @Transactional
-    public ResidentResponse insertToApartment(ResidentRequest request, Long apartmentId) {
+    public List<ResidentResponse> insertToApartment(List<ResidentRequest> request, Long apartmentId) {
 
-        
-        Resident resident = residentMapper.requestToEntity(request);
-        resident.setLivingApartment(apartmentRepository.findById(apartmentId)
-                .orElseThrow(() -> new RuntimeException("Apartment with ID " + apartmentId + " not found")));
-        resident = residentRepository.save(resident);
+        List<Resident> residents = request.stream().map(residentMapper::requestToEntity).toList();
+        Apartment livingApartment = apartmentRepository.findById(apartmentId)
+                .orElseThrow(() -> new RuntimeException("Apartment with ID " + apartmentId + " not found"));
+        residents.forEach(x -> x.setLivingApartment(livingApartment));
+        residents = residentRepository.saveAll(residents);
 
 
-        ResidentChangeLog changeLog = new ResidentChangeLog();
-        changeLog.setResident(residentMapper.entityToResponse(resident));
-        changeLog.setApartment(apartmentMapper.entityToResponse(resident.getLivingApartment()));
-        changeLog.setLastType(LivingType.O_NGOAI);
-        changeLog.setChangeType(resident.getCurrentLivingType());
-        changeLog.setChangeDate(LocalDateTime.now());
-        changeLog.setNotes("Insert to apartment");
-        residentChangeLogRepository.save(changeLog);
+        List<ResidentChangeLog> changeLogs = new ArrayList<>();
+        for (Resident resident : residents) {
+            ResidentChangeLog changeLog = new ResidentChangeLog();
+            changeLog.setResident(residentMapper.entityToResponse(resident));
+            changeLog.setApartment(apartmentMapper.entityToResponse(resident.getLivingApartment()));
+            changeLog.setLastType(LivingType.O_NGOAI);
+            changeLog.setChangeType(resident.getCurrentLivingType());
+            changeLog.setChangeDate(LocalDateTime.now());
+            changeLog.setNotes("Anh cho thang nay vao nha");
+            changeLogs.add(changeLog);
+        }
+        residentChangeLogRepository.saveAll(changeLogs);
 
-        return residentMapper.entityToResponse(resident);
+
+        return residentMapper.entityListToResponseList(residents);
     }
 
 

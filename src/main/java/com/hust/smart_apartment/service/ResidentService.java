@@ -9,13 +9,15 @@ import com.hust.smart_apartment.entity.Resident;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface ResidentService {
     ResidentChangeLogResponse changeLivingType(Long residentId, ChangeLivingTypeRequest request);
 
     ResidentResponse getById(Long id);
 
-    ResidentResponse insertToApartment(ResidentRequest request,Long apartmentId);
+    List<ResidentResponse>  insertToApartment(List<ResidentRequest> request, Long apartmentId);
 
     ResidentResponse update(Long id, ResidentRequest request);
 

@@ -74,7 +74,8 @@ public class AuthServiceImpl implements AuthService {
                 .setResidentId(registerRequest.getResidentId())
                 .setUsername(username);
 
-        mailService.sendRegisterVerifiedMail(user.getEmail(), jwtProvider.generateToken(user));
+        user.setIsVerified(true);
+//        mailService.sendRegisterVerifiedMail(user.getEmail(), jwtProvider.generateToken(user));
         userRepository.save(user);
         log.info("saved user {}", user);
         users.add(username);

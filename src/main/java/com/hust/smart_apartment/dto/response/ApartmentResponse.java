@@ -3,7 +3,6 @@ package com.hust.smart_apartment.dto.response;
 import com.hust.smart_apartment.annotations.DbColumnMapper;
 import com.hust.smart_apartment.annotations.QuickSearchDomain;
 import com.hust.smart_apartment.dto.AbstractAuditingDto;
-import com.hust.smart_apartment.entity.Resident;
 import lombok.*;
 
 import java.util.List;
@@ -25,11 +24,13 @@ public class ApartmentResponse extends AbstractAuditingDto {
     @DbColumnMapper("code")
     private String code;
 
-    private Integer floorNumber;
-
+    @DbColumnMapper("area")
     private Long area;
+
+    @DbColumnMapper("resident_id")
+    private Long ownerId;
 
     private ResidentResponse owner;
 
-    private List<Resident> residents;
+    private List<ResidentResponse> residents;
 }
