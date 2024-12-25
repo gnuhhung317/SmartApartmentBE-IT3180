@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface VehicleService {
     VehicleResponse getById(Long id);
@@ -19,4 +21,6 @@ public interface VehicleService {
     ModifyDto delete(Long id);
     Page<VehicleResponse> search(SearchRequest request);
     VehicleTypeResponse updateVehicleType(Long id, Integer unitPrice);
+    List<VehicleTypeResponse> getAll();
+    List<VehicleTypeResponse> createVehicleTypes();
 }

@@ -12,6 +12,6 @@ import java.util.List;
 public class EnumServiceImpl implements EnumService {
     @Override
     public <E extends Enum<E>& CodeNameProvider> List<CodeNameResponse> getEnum(Class<E> enumClass) {
-        return Arrays.stream(enumClass.getEnumConstants()).map(x-> new CodeNameResponse(x.getCode(),x.getName())).toList();
+        return Arrays.stream(enumClass.getEnumConstants()).map(x-> new CodeNameResponse(x.getCode(),x.getName(),x.name())).toList();
     }
 }

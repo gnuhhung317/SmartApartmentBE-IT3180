@@ -6,10 +6,13 @@ import com.hust.smart_apartment.dto.request.SearchRequest;
 import com.hust.smart_apartment.dto.request.VehicleRequest;
 import com.hust.smart_apartment.dto.response.VehicleResponse;
 import com.hust.smart_apartment.dto.response.VehicleTypeResponse;
+import com.hust.smart_apartment.entity.VehicleType;
 import com.hust.smart_apartment.service.VehicleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/vehicles")
@@ -51,5 +54,17 @@ public class VehicleController {
     public BaseResponse<VehicleTypeResponse> updateVehicleType(@PathVariable Long id, @RequestBody Integer unitPrice) {
         VehicleTypeResponse vehicleTypeResponse = vehicleService.updateVehicleType(id, unitPrice);
         return BaseResponse.ok(vehicleTypeResponse);
+    }
+
+    @GetMapping("/vehicle-types")
+    public BaseResponse<List<VehicleTypeResponse>> getAllVehicleTypes() {
+        List<VehicleTypeResponse> vehicleTypeResponses = vehicleService.createVehicleTypes();
+        return BaseResponse.ok(vehicleTypeResponses);
+    }
+
+    @GetMapping("vehicle-types/create")
+    public BaseResponse<List<VehicleTypeResponse>> createVehicles() {
+        List<VehicleTypeResponse> vehicleResponses = vehicleService.getAll();
+        return BaseResponse.ok(vehicleResponses);
     }
 }

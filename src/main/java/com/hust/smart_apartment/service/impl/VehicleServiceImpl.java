@@ -1,5 +1,6 @@
 package com.hust.smart_apartment.service.impl;
 
+import com.hust.smart_apartment.constants.FeeCategory;
 import com.hust.smart_apartment.dto.ModifyDto;
 import com.hust.smart_apartment.dto.request.SearchRequest;
 import com.hust.smart_apartment.dto.request.VehicleRequest;
@@ -19,6 +20,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -86,5 +88,20 @@ public class VehicleServiceImpl implements VehicleService {
         vehicleType.setUnitPrice(unitPrice);
         vehicleType =vehicleTypeRepository.save(vehicleType);
         return VehicleTypeResponse.builder().feeCategory(vehicleType.getFeeCategory()).unitPrice(vehicleType.getUnitPrice()).vehicleTypeId(vehicleType.getVehicleTypeId()).build();
+    }
+
+    @Override
+    public List<VehicleTypeResponse> getAll() {
+        return vehicleTypeRepository.findAll().stream().map(vehicleMapper::vehicleTypeEntityToResponse).toList();
+    }
+
+    @Override
+    public List<VehicleTypeResponse> createVehicleTypes() {
+        List<VehicleType> vehicleTypes = List.of(
+                VehicleType.builder().feeCategory(FeeCategory.PARKING_CAR).unitPrice(1000000).build(),
+                VehicleType.builder().feeCategory(FeeCategory.PARKING_MOTORCYCLE).unitPrice(100000).build()
+        );
+        vehicleTypeRepository.saveAll(vehicleTypes);
+        return getAll();
     }
 }

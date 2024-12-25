@@ -2,10 +2,7 @@ package com.hust.smart_apartment.entity;
 
 import com.hust.smart_apartment.constants.FeeCategory;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 @Getter
@@ -15,6 +12,7 @@ import lombok.experimental.Accessors;
 @Entity
 @Table(name = "vehicle_types")
 @Accessors(chain = true)
+@Builder
 public class VehicleType extends BaseEntity{
     
     @Id
