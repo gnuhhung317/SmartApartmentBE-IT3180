@@ -29,8 +29,11 @@ public class Campaign {
     @Column(name = "end_date")
     private LocalDateTime endDate;
 
-    @ManyToOne
-    @JoinColumn(name = "period_id")
-    private Period period;
+    @Column(name = "total")
+    private Long total;
+
+//    @ManyToOne
+//    @JoinColumn(name = "period_id")
+//    private Period period;
 
 }

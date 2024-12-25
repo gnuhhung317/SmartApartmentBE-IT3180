@@ -1,15 +1,14 @@
 package com.hust.smart_apartment.service.impl;
 
-import com.hust.smart_apartment.constants.LivingType;
 import com.hust.smart_apartment.dto.ModifyDto;
 import com.hust.smart_apartment.dto.request.ApartmentRequest;
 import com.hust.smart_apartment.dto.request.SearchRequest;
 import com.hust.smart_apartment.dto.request.UpdateApartmentRequest;
 import com.hust.smart_apartment.dto.response.ApartmentResponse;
+import com.hust.smart_apartment.dto.response.ResidentResponse;
 import com.hust.smart_apartment.entity.Apartment;
 import com.hust.smart_apartment.entity.Floor;
 import com.hust.smart_apartment.entity.Resident;
-import com.hust.smart_apartment.entity.ResidentChangeLog;
 import com.hust.smart_apartment.mapper.ApartmentMapper;
 import com.hust.smart_apartment.mapper.ResidentMapper;
 import com.hust.smart_apartment.repository.ApartmentRepository;
@@ -22,9 +21,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -105,6 +104,19 @@ public class ApartmentServiceImpl implements ApartmentService {
 
     @Override
     public Page<ApartmentResponse> search(SearchRequest request) {
-        return searchRepository.search(request, ApartmentResponse.class);
+        return mappingResidents(searchRepository.search(request, ApartmentResponse.class));
+    }
+
+    private Page<ApartmentResponse> mappingResidents(Page<ApartmentResponse> responses) {
+        List<Long> ownerIds = responses.stream().map(ApartmentResponse::getOwnerId).toList();
+        List<Long> apartmentIds = responses.stream().map(ApartmentResponse::getApartmentId).toList();
+        Map<Long, ResidentResponse> owners = residentRepository.findAllById(ownerIds).stream().collect(Collectors.toMap(Resident::getResidentId, residentMapper::entityToResponse));
+        Map<Long, List<ResidentResponse>> residentResponses = apartmentRepository.findAllById(apartmentIds).stream().collect(Collectors.toMap(Apartment::getApartmentId, x -> residentMapper.entityListToResponseList(x.getResidents())));
+
+        for (ApartmentResponse response : responses) {
+            response.setOwner(owners.get(response.getOwnerId()));
+            response.setResidents(residentResponses.get(response.getApartmentId()));
+        }
+        return responses;
     }
 }

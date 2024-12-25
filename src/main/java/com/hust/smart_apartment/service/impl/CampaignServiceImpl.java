@@ -35,7 +35,7 @@ public class CampaignServiceImpl implements CampaignService {
     @Override
     public CampaignResponse create(CampaignRequest request) {
         Campaign campaign = campaignMapper.requestToEntity(request);
-        campaign.setPeriod(periodRepository.findById(request.getPeriodId()).orElseThrow(() -> new EntityNotFoundException("id: " + request.getPeriodId())));
+//        campaign.setPeriod(periodRepository.findById(request.getPeriodId()).orElseThrow(() -> new EntityNotFoundException("id: " + request.getPeriodId())));
         campaign = campaignRepository.save(campaign);
 
         return campaignMapper.entityToResponse(campaign);

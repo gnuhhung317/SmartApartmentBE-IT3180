@@ -25,6 +25,10 @@ public class FloorResponse {
 
     @DbColumnMapper("floor_number")
     private Integer floorNumber;
+
+    @DbColumnMapper("building_id")
+    private Long buildingId;
+
     private BuildingResponse building;
     private List<ApartmentResponse> apartments;
 }

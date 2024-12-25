@@ -28,6 +28,7 @@ public class CampaignResponse {
     @DbColumnMapper("end_date")
     private LocalDateTime endDate;
 
-    private PeriodResponse period;
+    @DbColumnMapper("total")
+    private Long total;
 
 }

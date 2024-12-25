@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/residents")
 @RequiredArgsConstructor
@@ -18,8 +20,8 @@ public class ResidentController {
     private final ResidentService residentService;
 
     @PostMapping("change-living-type")
-    public BaseResponse<ResidentChangeLogResponse> changeLivingType(@RequestParam("residentId") Long id, @RequestBody ChangeLivingTypeRequest request){
-        return BaseResponse.ok(residentService.changeLivingType(id,request));
+    public BaseResponse<ResidentChangeLogResponse> changeLivingType(@RequestParam("residentId") Long id, @RequestBody ChangeLivingTypeRequest request) {
+        return BaseResponse.ok(residentService.changeLivingType(id, request));
     }
 
     @GetMapping("/{id}")
@@ -28,7 +30,7 @@ public class ResidentController {
     }
 
     @PostMapping("/to-apartment/{apartmentId}")
-    public BaseResponse<ResidentResponse> addResidentToApartment(@RequestBody ResidentRequest request, @PathVariable("apartmentId") Long apartmentId) {
+    public BaseResponse<List<ResidentResponse>> addResidentToApartment(@RequestBody List<ResidentRequest> request, @PathVariable("apartmentId") Long apartmentId) {
         return BaseResponse.ok(residentService.insertToApartment(request, apartmentId));
     }
 
