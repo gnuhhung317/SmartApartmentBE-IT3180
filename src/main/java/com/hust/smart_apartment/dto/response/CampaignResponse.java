@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -23,10 +23,10 @@ public class CampaignResponse {
     private String description;
 
     @DbColumnMapper("start_date")
-    private LocalDateTime startDate;
+    private Date startDate;
 
     @DbColumnMapper("end_date")
-    private LocalDateTime endDate;
+    private Date endDate;
 
     @DbColumnMapper("total")
     private Long total;
