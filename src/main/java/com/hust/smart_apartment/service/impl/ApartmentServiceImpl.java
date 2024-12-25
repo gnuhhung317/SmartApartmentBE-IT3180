@@ -7,14 +7,12 @@ import com.hust.smart_apartment.dto.request.UpdateApartmentRequest;
 import com.hust.smart_apartment.dto.response.ApartmentResponse;
 import com.hust.smart_apartment.dto.response.ResidentResponse;
 import com.hust.smart_apartment.entity.Apartment;
+import com.hust.smart_apartment.entity.FeeType;
 import com.hust.smart_apartment.entity.Floor;
 import com.hust.smart_apartment.entity.Resident;
 import com.hust.smart_apartment.mapper.ApartmentMapper;
 import com.hust.smart_apartment.mapper.ResidentMapper;
-import com.hust.smart_apartment.repository.ApartmentRepository;
-import com.hust.smart_apartment.repository.FloorRepository;
-import com.hust.smart_apartment.repository.ResidentRepository;
-import com.hust.smart_apartment.repository.SearchRepository;
+import com.hust.smart_apartment.repository.*;
 import com.hust.smart_apartment.service.ApartmentService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -37,6 +35,7 @@ public class ApartmentServiceImpl implements ApartmentService {
     private final ResidentMapper residentMapper;
     private final SearchRepository<ApartmentResponse> searchRepository;
     private final FloorRepository floorRepository;
+    private final FeeTypeRepository feeTypeRepository;
 
     @Override
     public ApartmentResponse getById(Long id) {
@@ -51,6 +50,11 @@ public class ApartmentServiceImpl implements ApartmentService {
         Apartment apartment = apartmentMapper.requestToEntity(request);
         Floor floor = floorRepository.findById(request.getFloorId())
                 .orElseThrow(() -> new EntityNotFoundException("Floor not found with ID: " + request.getFloorId()));
+        FeeType serviceFee = feeTypeRepository.findById(request.getServiceFeeId()).orElseThrow(() -> new EntityNotFoundException("FeeType not found with ID: " + request.getServiceFeeId()));
+        FeeType managementFee = feeTypeRepository.findById(request.getManagementFeeId()).orElseThrow(() -> new EntityNotFoundException("FeeType not found with ID: " + request.getManagementFeeId()));
+
+        apartment.setServiceFee(serviceFee);
+        apartment.setManagementFee(managementFee);
         apartment.setFloor(floor);
         return apartmentMapper.entityToResponse(apartmentRepository.save(apartment));
     }

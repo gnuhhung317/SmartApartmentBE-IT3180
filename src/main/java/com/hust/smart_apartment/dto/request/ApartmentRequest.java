@@ -16,5 +16,7 @@ public class ApartmentRequest {
 
     private Long floorId;
 
-    private Long feeTypeId;
+    private Long managementFeeId;
+
+    private Long serviceFeeId;
 }
