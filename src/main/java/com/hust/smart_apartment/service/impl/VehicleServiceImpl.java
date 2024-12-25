@@ -6,9 +6,11 @@ import com.hust.smart_apartment.dto.request.SearchRequest;
 import com.hust.smart_apartment.dto.request.VehicleRequest;
 import com.hust.smart_apartment.dto.response.VehicleResponse;
 import com.hust.smart_apartment.dto.response.VehicleTypeResponse;
+import com.hust.smart_apartment.entity.Apartment;
 import com.hust.smart_apartment.entity.Vehicle;
 import com.hust.smart_apartment.entity.VehicleType;
 import com.hust.smart_apartment.mapper.VehicleMapper;
+import com.hust.smart_apartment.repository.ApartmentRepository;
 import com.hust.smart_apartment.repository.SearchRepository;
 import com.hust.smart_apartment.repository.VehicleRepository;
 import com.hust.smart_apartment.repository.VehicleTypeRepository;
@@ -32,6 +34,7 @@ public class VehicleServiceImpl implements VehicleService {
     private final VehicleRepository vehicleRepository;
     private final VehicleTypeRepository vehicleTypeRepository;
     private final SearchRepository<VehicleResponse> searchRepository;
+    private final ApartmentRepository apartmentRepository;
 
     @Override
     public VehicleResponse getById(Long id) {
@@ -48,6 +51,9 @@ public class VehicleServiceImpl implements VehicleService {
                         vehicleTypeRepository.findById(vehicleTypeId)
                                 .orElseThrow(() -> new EntityNotFoundException("VehicleType not found with id: " + vehicleTypeId))
                 ));
+        Apartment apartment = apartmentRepository.findById(request.getApartmentId()).orElseThrow(
+                () -> new EntityNotFoundException("Apartment not found with id: " + request.getApartmentId()));
+        vehicle.setApartment(apartment);
         Vehicle savedVehicle = vehicleRepository.save(vehicle);
         return vehicleMapper.entityToResponse(savedVehicle);
     }

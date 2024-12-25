@@ -141,8 +141,6 @@ public class SearchRepositoryImpl<T> implements SearchRepository<T> {
                 .clazz(clazz)
                 .pageable(pageable)
                 .parametersForCustom(request.getParametersForCustom())
-                .isPermissionData(request.getIsPermissionData())
-                .isEmployee(request.getIsEmployee())
                 .build();
     }
 

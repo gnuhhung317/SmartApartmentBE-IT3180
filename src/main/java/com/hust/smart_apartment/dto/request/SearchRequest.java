@@ -23,8 +23,6 @@ public class SearchRequest {
     private List<Order> sorts;
     private List<Filter> filters;
     private Map<String, Object> parametersForCustom;
-    private Boolean isPermissionData = false;
-    private Boolean isEmployee = false;
 
     @JsonIgnore
     public Integer getOffset() {
