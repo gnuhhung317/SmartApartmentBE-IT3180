@@ -21,5 +21,4 @@ public class CampaignRequest {
 
     private LocalDateTime endDate;
 
-    private Long periodId;
 }
