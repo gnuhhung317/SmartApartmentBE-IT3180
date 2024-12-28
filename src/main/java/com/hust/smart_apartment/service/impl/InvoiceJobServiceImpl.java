@@ -10,6 +10,7 @@ import com.hust.smart_apartment.service.InvoiceJobService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.cglib.core.Local;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,9 @@ public class InvoiceJobServiceImpl implements InvoiceJobService {
 //    @Scheduled(cron = "*/4 * * * * ?")
     public void createInvoiceEveryMonth() {
         LocalDateTime time = LocalDateTime.now();
+//        LocalDateTime time = LocalDateTime.of(2022, 1, 28, 0, 0, 0);
+//        time = time.plusMonths(staticMonth++);
+//        if(time.isAfter(LocalDateTime.now())) return;
         log.info("Create invoice every month at"+ new Date());
         List<Apartment> apartments = apartmentRepository.findApartmentsByResidentIdNotNull();
         Map<Long, List<FeeInvoiceDto>> fees = getFees(apartments);
@@ -57,9 +61,9 @@ public class InvoiceJobServiceImpl implements InvoiceJobService {
             invoice.setTotalAmount(calculateTotalFee(invoice.getFees()));
             invoice.setInvoiceCode(code.toString());
 
-            invoice.setInternetFee(FeeInvoiceDto.builder().feeName("Hóa đơn internet tháng "+time.getMonth()).feeAmount(0.0).feeDescription("Đây là một loại phí ok").build());
-            invoice.setWaterFee(FeeInvoiceDto.builder().feeName("Hóa đơn nước tháng "+time.getMonth()).feeAmount(0.0).feeDescription("Đây là một loại phí ok").build());
-            invoice.setElectricityFee(FeeInvoiceDto.builder().feeName("Hóa đơn điện tháng "+time.getMonth()).feeAmount(0.0).feeDescription("Đây là một loại phí ok").build());
+            invoice.setInternetFee(FeeInvoiceDto.builder().feeName("Hóa đơn internet tháng "+ time.getMonth().getValue()).feeAmount(0.0).feeDescription("Đây là một loại phí ok").build());
+            invoice.setWaterFee(FeeInvoiceDto.builder().feeName("Hóa đơn nước tháng "+ time.getMonth().getValue()).feeAmount(0.0).feeDescription("Đây là một loại phí ok").build());
+            invoice.setElectricityFee(FeeInvoiceDto.builder().feeName("Hóa đơn điện tháng "+ time.getMonth().getValue()).feeAmount(0.0).feeDescription("Đây là một loại phí ok").build());
 
             return invoice;
         }).toList();
