@@ -28,7 +28,7 @@ public class CampaignResponse {
     @DbColumnMapper("end_date")
     private Date endDate;
 
-    @DbColumnMapper("total")
-    private Long total;
+    @DbColumnMapper("total_amount")
+    private Long total = 0l;
 
 }

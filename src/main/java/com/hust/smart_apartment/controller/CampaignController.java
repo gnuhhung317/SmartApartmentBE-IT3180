@@ -17,31 +17,31 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CampaignController {
     @Qualifier("campaignServiceImpl")
-    private final CampaignService campageService;
+    private final CampaignService campaignService;
 
 
     @GetMapping("/{id}")
     public BaseResponse<CampaignResponse> getById(@PathVariable Long id) {
-        return BaseResponse.ok(campageService.getById(id));
+        return BaseResponse.ok(campaignService.getById(id));
     }
 
     @PostMapping
     public BaseResponse<CampaignResponse> create(@RequestBody CampaignRequest request) {
-        return BaseResponse.ok(campageService.create(request));
+        return BaseResponse.ok(campaignService.create(request));
     }
 
     @PutMapping("/{id}")
     public BaseResponse<CampaignResponse> update(@PathVariable Long id, @RequestBody CampaignRequest request) {
-        return BaseResponse.ok(campageService.update(id, request));
+        return BaseResponse.ok(campaignService.update(id, request));
     }
 
     @DeleteMapping("/{id}")
     public BaseResponse<ModifyDto> delete(@PathVariable Long id) {
-        return BaseResponse.ok(campageService.delete(id));
+        return BaseResponse.ok(campaignService.delete(id));
     }
 
     @PostMapping("/search")
     public BaseResponse<Page<CampaignResponse>> search(@RequestBody SearchRequest request) {
-        return BaseResponse.ok(campageService.search(request));
+        return BaseResponse.ok(campaignService.search(request));
     }
 }

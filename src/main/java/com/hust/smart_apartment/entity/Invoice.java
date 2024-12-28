@@ -24,6 +24,8 @@ public class Invoice extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String invoiceCode;
+
     @ManyToOne
     @JoinColumn(name = "apartment_id")
     private Apartment apartment;
@@ -36,12 +38,21 @@ public class Invoice extends BaseEntity {
 
     private LocalDateTime lastPayDate;
 
-    private Integer totalAmount;
+    private Double totalAmount;
 
-    private Integer paidAmount;
+    private Double paidAmount;
 
     private String status;
 
     @JdbcTypeCode(SqlTypes.JSON)
     private List<FeeInvoiceDto> fees;
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    private FeeInvoiceDto waterFee = new FeeInvoiceDto();
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    private FeeInvoiceDto electricityFee = new FeeInvoiceDto();
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    private FeeInvoiceDto internetFee = new FeeInvoiceDto();
 }

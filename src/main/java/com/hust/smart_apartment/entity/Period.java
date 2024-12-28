@@ -10,8 +10,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "periods")
+//@Entity
+//@Table(name = "periods")
 public class Period {
 
     @Id

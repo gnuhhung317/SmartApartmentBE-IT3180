@@ -15,9 +15,9 @@ services:
       - my-network
 
   app:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: gnuhhung317/smart-apt:latest
     container_name: spring-boot-app
     environment:

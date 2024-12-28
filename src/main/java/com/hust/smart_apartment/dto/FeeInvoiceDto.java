@@ -10,10 +10,10 @@ import lombok.*;
 public class FeeInvoiceDto {
 
     private String feeName;
-    private Integer feeAmount;
+    private Double feeAmount;
     private String feeDescription;
 
-    public void addFeeAmount(Integer feeAmount) {
+    public void addFeeAmount(Double feeAmount) {
         if(feeAmount == null) {
             return;
         }

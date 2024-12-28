@@ -1,5 +1,10 @@
 package com.hust.smart_apartment.dto.response;
 
+import com.hust.smart_apartment.annotations.DbColumnMapper;
+import com.hust.smart_apartment.annotations.QuickSearchDomain;
+import com.hust.smart_apartment.constants.QuickSearchKeyOption;
+import com.hust.smart_apartment.dto.AbstractAuditingDto;
+import com.hust.smart_apartment.dto.model.QuickSearchInput;
 import com.hust.smart_apartment.entity.Apartment;
 import com.hust.smart_apartment.entity.VehicleType;
 import jakarta.persistence.Column;
@@ -15,12 +20,22 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class VehicleResponse {
+@QuickSearchDomain(tableName = "vehicles")
+public class VehicleResponse extends AbstractAuditingDto {
+
+    @DbColumnMapper("vehicle_id")
     private Long vehicleId;
 
+    @DbColumnMapper("license_plate")
+    @QuickSearchInput(columnName = "license_plate",keyOption = QuickSearchKeyOption.ILIKE)
     private String licensePlate;
 
+    @DbColumnMapper("name")
+    @QuickSearchInput(columnName = "name",keyOption = QuickSearchKeyOption.ILIKE)
     private String name;
+
+    @DbColumnMapper("apartment_id")
+    private Long apartmentId;
 
     private VehicleTypeResponse vehicleType;
 

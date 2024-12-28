@@ -7,7 +7,6 @@ import com.hust.smart_apartment.dto.response.CampaignResponse;
 import com.hust.smart_apartment.entity.Campaign;
 import com.hust.smart_apartment.mapper.CampaignMapper;
 import com.hust.smart_apartment.repository.CampaignRepository;
-import com.hust.smart_apartment.repository.PeriodRepository;
 import com.hust.smart_apartment.repository.SearchRepository;
 import com.hust.smart_apartment.service.CampaignService;
 import jakarta.persistence.EntityNotFoundException;
@@ -21,7 +20,7 @@ public class CampaignServiceImpl implements CampaignService {
 
     private final CampaignRepository campaignRepository;
 
-    private final PeriodRepository periodRepository;
+//    private final PeriodRepository periodRepository;
 
     private final CampaignMapper campaignMapper;
 

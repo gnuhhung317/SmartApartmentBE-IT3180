@@ -4,7 +4,6 @@ package com.hust.smart_apartment.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -30,8 +29,16 @@ public class Campaign {
     @Column(name = "end_date")
     private Date endDate;
 
-    @Column(name = "total")
-    private Long total;
+    @Column(name = "total_amount")
+    private Long total = 0l;
+
+    public void addMoney(Long amount){
+        total+=amount;
+    }
+
+    public void subtractMoney(long amount){
+        total-=amount;
+    }
 
 //    @ManyToOne
 //    @JoinColumn(name = "period_id")
