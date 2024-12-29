@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public interface VehicleRepository extends JpaRepository<Vehicle,Long> {
 
-    @Query("SELECT new com.hust.smart_apartment.dto.CountDto(v.vehicleId, COUNT(v.vehicleId))" +
+    @Query("SELECT new com.hust.smart_apartment.dto.CountDto(v.apartment.apartmentId, COUNT(v.vehicleId)) " +
             "FROM Vehicle v " +
-            "GROUP BY v.apartment.apartmentId " +
-            "HAVING v.apartment.apartmentId IN :ids")
+            "WHERE v.apartment.apartmentId IN :ids " +
+            "GROUP BY v.apartment.apartmentId")
     List<CountDto> countAllByApartmentIdId(List<Long> ids);
 }

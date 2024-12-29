@@ -1,5 +1,6 @@
 package com.hust.smart_apartment.controller;
 
+import com.hust.smart_apartment.constants.Gender;
 import com.hust.smart_apartment.constants.HouseholdRole;
 import com.hust.smart_apartment.constants.InvoiceStatus;
 import com.hust.smart_apartment.constants.LivingType;
@@ -31,5 +32,9 @@ public class EnumController {
     @GetMapping("/invoice-statuses")
     public BaseResponse<List<CodeNameResponse>> getInvoiceStatuses() {
         return BaseResponse.ok(enumService.getEnum(InvoiceStatus.class));
+    }
+    @GetMapping("/gender")
+    public BaseResponse<List<CodeNameResponse>> getLivingTypes() {
+        return BaseResponse.ok(enumService.getEnum(Gender.class));
     }
 }

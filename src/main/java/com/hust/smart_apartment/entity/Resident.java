@@ -1,5 +1,6 @@
 package com.hust.smart_apartment.entity;
 
+import com.hust.smart_apartment.constants.Gender;
 import com.hust.smart_apartment.constants.HouseholdRole;
 import com.hust.smart_apartment.constants.LivingType;
 import jakarta.persistence.*;
@@ -34,6 +35,11 @@ public class Resident extends BaseEntity {
 
     @Column(name = "household_role",nullable = false)
     private HouseholdRole householdRole;
+
+    private String contact;
+
+    @Column(name = "gender",nullable = false)
+    private Gender gender;
 
     private String avatar = "https://pic.re/image";
 
