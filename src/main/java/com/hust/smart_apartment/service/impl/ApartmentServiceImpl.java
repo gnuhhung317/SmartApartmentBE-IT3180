@@ -1,5 +1,6 @@
 package com.hust.smart_apartment.service.impl;
 
+import com.hust.smart_apartment.dto.CountDto;
 import com.hust.smart_apartment.dto.ModifyDto;
 import com.hust.smart_apartment.dto.request.ApartmentRequest;
 import com.hust.smart_apartment.dto.request.SearchRequest;
@@ -36,6 +37,7 @@ public class ApartmentServiceImpl implements ApartmentService {
     private final SearchRepository<ApartmentResponse> searchRepository;
     private final FloorRepository floorRepository;
     private final FeeTypeRepository feeTypeRepository;
+    private final VehicleRepository vehicleRepository;
 
     @Override
     public ApartmentResponse getById(Long id) {
@@ -116,10 +118,11 @@ public class ApartmentServiceImpl implements ApartmentService {
         List<Long> apartmentIds = responses.stream().map(ApartmentResponse::getApartmentId).toList();
         Map<Long, ResidentResponse> owners = residentRepository.findAllById(ownerIds).stream().collect(Collectors.toMap(Resident::getResidentId, residentMapper::entityToResponse));
         Map<Long, List<ResidentResponse>> residentResponses = apartmentRepository.findAllById(apartmentIds).stream().collect(Collectors.toMap(Apartment::getApartmentId, x -> residentMapper.entityListToResponseList(x.getResidents())));
-
+        Map<Long,Long> apartmentVehicleCount = vehicleRepository.countAllByApartmentIdId(apartmentIds).stream().collect(Collectors.toMap(CountDto::getId, CountDto::getCount));
         for (ApartmentResponse response : responses) {
             response.setOwner(owners.get(response.getOwnerId()));
             response.setResidents(residentResponses.get(response.getApartmentId()));
+            response.setVehicleCount(apartmentVehicleCount.get(response.getApartmentId()));
         }
         return responses;
     }

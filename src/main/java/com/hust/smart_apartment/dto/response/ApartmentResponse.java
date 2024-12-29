@@ -30,6 +30,8 @@ public class ApartmentResponse extends AbstractAuditingDto {
     @DbColumnMapper("resident_id")
     private Long ownerId;
 
+    private Long vehicleCount;
+
     private ResidentResponse owner;
 
     private List<ResidentResponse> residents;
