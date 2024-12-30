@@ -7,6 +7,7 @@ import com.hust.smart_apartment.dto.request.SearchRequest;
 import com.hust.smart_apartment.dto.response.ResidentChangeLogResponse;
 import com.hust.smart_apartment.dto.response.ResidentResponse;
 import com.hust.smart_apartment.service.ResidentService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -42,5 +43,14 @@ public class ResidentController {
     @PostMapping("/search")
     public BaseResponse<Page<ResidentResponse>> searchResidents(@RequestBody SearchRequest searchRequest) {
         return BaseResponse.ok(residentService.search(searchRequest));
+    }
+    @PostMapping("/change-log/search")
+    public BaseResponse<Page<ResidentChangeLogResponse>> searchChangeLog(@RequestBody SearchRequest searchRequest) {
+        return BaseResponse.ok(residentService.searchChangeLog(searchRequest));
+    }
+
+    @GetMapping("/remove-from-apartment/{id}")
+    public BaseResponse<ResidentResponse> removeResidentFromApartment(@PathVariable("id") Long id) {
+        return BaseResponse.ok(residentService.removeFromApartment(id));
     }
 }

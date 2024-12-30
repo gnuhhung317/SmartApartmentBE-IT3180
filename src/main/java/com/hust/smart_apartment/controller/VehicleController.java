@@ -58,13 +58,14 @@ public class VehicleController {
 
     @GetMapping("/vehicle-types")
     public BaseResponse<List<VehicleTypeResponse>> getAllVehicleTypes() {
-        List<VehicleTypeResponse> vehicleTypeResponses = vehicleService.createVehicleTypes();
+        List<VehicleTypeResponse> vehicleTypeResponses = vehicleService.getAll();
         return BaseResponse.ok(vehicleTypeResponses);
     }
 
     @GetMapping("vehicle-types/create")
     public BaseResponse<List<VehicleTypeResponse>> createVehicles() {
-        List<VehicleTypeResponse> vehicleResponses = vehicleService.getAll();
+        List<VehicleTypeResponse> vehicleResponses = vehicleService.createVehicleTypes();
         return BaseResponse.ok(vehicleResponses);
+//        return null;
     }
 }

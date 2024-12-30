@@ -18,6 +18,10 @@ public enum LivingType implements CodeNameProvider {
         this.code = code;
         this.name = name;
     }
+    @Override
+    public String getEnumName() {
+        return name();
+    }
 
 
 }

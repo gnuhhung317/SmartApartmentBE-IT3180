@@ -21,12 +21,12 @@ public class VehicleTypeResponse {
     @DbColumnMapper("vehicle_type_id")
     private Long vehicleTypeId;
 
-    @DbColumnMapper("name")
-    @QuickSearchInput(columnName = "name",keyOption = QuickSearchKeyOption.ILIKE)
-    private String name;
+//    @DbColumnMapper("name")
+//    private String name;
 
     private FeeCategory feeCategory;
 
     @DbColumnMapper("unit_price")
     private Integer unitPrice;
+
 }

@@ -32,6 +32,12 @@ public class ResidentChangeLog extends BaseEntity{
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "resident_id")
+    private Long residentId;
+
+    @Column(name = "apartment_id")
+    private Long apartmentId;
+
     @JdbcTypeCode(SqlTypes.JSON)
     private ResidentResponse resident;
 

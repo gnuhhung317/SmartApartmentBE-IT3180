@@ -22,4 +22,8 @@ public interface ResidentService {
     ResidentResponse update(Long id, ResidentRequest request);
 
     Page<ResidentResponse> search(SearchRequest request);
+
+    Page<ResidentChangeLogResponse> searchChangeLog(SearchRequest request);
+
+    ResidentResponse removeFromApartment(Long id);
 }

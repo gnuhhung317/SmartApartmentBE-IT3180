@@ -23,6 +23,10 @@ public class ResidentRequest {
 
     private Gender gender;
 
+    private String job;
+
+    private String hometown;
+
     private LivingType currentLivingType;
 
     private HouseholdRole householdRole;

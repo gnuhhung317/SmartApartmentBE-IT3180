@@ -6,14 +6,13 @@ import com.hust.smart_apartment.annotations.QuickSearchDomain;
 import com.hust.smart_apartment.constants.Gender;
 import com.hust.smart_apartment.constants.HouseholdRole;
 import com.hust.smart_apartment.constants.LivingType;
-import com.hust.smart_apartment.entity.Apartment;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -36,38 +35,49 @@ public class ResidentResponse {
     @DbColumnMapper("identity_card_number")
     private String identityCardNumber;
 
+    @DbColumnMapper("job")
+    private String job;
+
+    @DbColumnMapper("hometown")
+    private String hometown;
+
     @JsonIgnore
     @DbColumnMapper("current_living_type")
     private int currentLivingTypeId;
 
-    private LivingType currentLivingType;
+    @Getter
+    private CodeNameResponse currentLivingType;
 
     @JsonIgnore
     @DbColumnMapper("household_role")
     private int householdRoleId;
 
-    private HouseholdRole householdRole;
+    private CodeNameResponse householdRole;
 
     @DbColumnMapper("gender")
     private int genderId;
 
-    private Gender gender;
+    private CodeNameResponse gender;
 
     @DbColumnMapper("contact")
     private String contact;
 
-    void setCurrentLivingTypeId( int currentLivingTypeId ) {
+    public void setCurrentLivingTypeId(int currentLivingTypeId) {
         this.currentLivingTypeId = currentLivingTypeId;
-        currentLivingType = LivingType.values()[currentLivingTypeId];
+        currentLivingType = LivingType.values()[currentLivingTypeId].toCodeNameResponse();
     }
 
-    void setHouseholdRoleId( int householdRoleId ) {
+
+    public void setHouseholdRoleId(int householdRoleId) {
         this.householdRoleId = householdRoleId;
-        householdRole = HouseholdRole.values()[householdRoleId];
+        householdRole = HouseholdRole.values()[householdRoleId].toCodeNameResponse();
     }
 
-    void setGenderId( int genderId ) {
+
+    public void setGenderId(int genderId) {
         this.genderId = genderId;
-        gender = Gender.values()[genderId];
+        gender = Gender.values()[genderId].toCodeNameResponse();
     }
+
+
 }

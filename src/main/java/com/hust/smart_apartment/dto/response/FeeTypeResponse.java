@@ -1,5 +1,6 @@
 package com.hust.smart_apartment.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hust.smart_apartment.annotations.DbColumnMapper;
 import com.hust.smart_apartment.annotations.QuickSearchDomain;
 import com.hust.smart_apartment.constants.FeeCategory;
@@ -20,9 +21,11 @@ public class FeeTypeResponse {
     @DbColumnMapper("fee_type_id")
     private Long feeTypeId;
 
+    @JsonIgnore
     @DbColumnMapper("category")
-    @QuickSearchInput(columnName = "category",keyOption = QuickSearchKeyOption.ILIKE)
-    private FeeCategory category;
+    private FeeCategory categoryId;
+
+    private CodeNameResponse category;
 
     @DbColumnMapper("unit_price")
     private Long unitPrice;
@@ -30,4 +33,8 @@ public class FeeTypeResponse {
     @QuickSearchInput(columnName = "name",keyOption = QuickSearchKeyOption.ILIKE)
     @DbColumnMapper("description")
     private String description;
+
+    public void setCategory(FeeCategory feeCategory){
+        this.category = feeCategory.toCodeNameResponse();
+    }
 }

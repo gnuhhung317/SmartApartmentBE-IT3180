@@ -36,6 +36,7 @@ public class ResidentServiceImpl implements ResidentService {
     private final ResidentMapper residentMapper;
     private final ApartmentMapper apartmentMapper;
     private final SearchRepository<ResidentResponse> searchRepository;
+    private final SearchRepository<ResidentChangeLogResponse> searchChangeLogRepository;
 
 
     @Override
@@ -68,6 +69,8 @@ public class ResidentServiceImpl implements ResidentService {
         ResidentChangeLog changeLog = new ResidentChangeLog();
         changeLog.setResident(residentMapper.entityToResponse(resident));
         changeLog.setApartment(apartmentMapper.entityToResponse(resident.getLivingApartment()));
+        changeLog.setResidentId(residentId);
+        changeLog.setApartmentId(changeLog.getApartment().getApartmentId());
         changeLog.setLastType(resident.getCurrentLivingType());
         changeLog.setChangeType(request.getNewLivingType());
         changeLog.setChangeDate(LocalDateTime.now());
@@ -109,5 +112,33 @@ public class ResidentServiceImpl implements ResidentService {
     @Override
     public Page<ResidentResponse> search(SearchRequest request) {
         return searchRepository.search(request, ResidentResponse.class);
+    }
+
+    @Override
+    public Page<ResidentChangeLogResponse> searchChangeLog(SearchRequest request) {
+        return searchChangeLogRepository.search(request, ResidentChangeLogResponse.class);
+    }
+
+    @Override
+    @Transactional
+    public ResidentResponse removeFromApartment(Long id) {
+        Resident resident = residentRepository.findById(id).orElseThrow(() -> new RuntimeException("Resident with ID " + id + " not found"));
+        if(resident.getLivingApartment() == null) return residentMapper.entityToResponse(resident);
+        ResidentChangeLog changeLog = new ResidentChangeLog();
+        changeLog.setResident(residentMapper.entityToResponse(resident));
+        changeLog.setResidentId(id);
+        changeLog.setApartment(apartmentMapper.entityToResponse(resident.getLivingApartment()));
+        changeLog.setApartmentId(changeLog.getApartment().getApartmentId());
+        changeLog.setLastType(resident.getCurrentLivingType());
+        changeLog.setChangeType(LivingType.O_NGOAI);
+        changeLog.setChangeDate(LocalDateTime.now());
+        changeLog.setNotes("Anh cho thang nay ra nha");
+
+        residentChangeLogRepository.save(changeLog);
+        resident.setLivingApartment(null);
+        resident.setCurrentLivingType(LivingType.O_NGOAI);
+        resident = residentRepository.save(resident);
+
+        return residentMapper.entityToResponse(resident);
     }
 }

@@ -16,6 +16,7 @@ import com.hust.smart_apartment.repository.VehicleRepository;
 import com.hust.smart_apartment.repository.VehicleTypeRepository;
 import com.hust.smart_apartment.service.VehicleService;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
@@ -98,16 +99,22 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public List<VehicleTypeResponse> getAll() {
-        return vehicleTypeRepository.findAll().stream().map(vehicleMapper::vehicleTypeEntityToResponse).toList();
+        return convert(vehicleTypeRepository.findAll());
     }
 
     @Override
+    @Transactional
     public List<VehicleTypeResponse> createVehicleTypes() {
         List<VehicleType> vehicleTypes = List.of(
                 VehicleType.builder().feeCategory(FeeCategory.PARKING_CAR).unitPrice(1000000).build(),
-                VehicleType.builder().feeCategory(FeeCategory.PARKING_MOTORCYCLE).unitPrice(100000).build()
+                VehicleType.builder().feeCategory(FeeCategory.PARKING_MOTORCYCLE).unitPrice(100000).build(),
+                VehicleType.builder().feeCategory(FeeCategory.PARKING_BICYCLE).unitPrice(10000).build(),
+                VehicleType.builder().feeCategory(FeeCategory.PARKING_OTHER).unitPrice(10000).build()
         );
-        vehicleTypeRepository.saveAll(vehicleTypes);
-        return getAll();
+        vehicleTypeRepository.deleteAll();
+        return convert(vehicleTypeRepository.saveAll(vehicleTypes));
+    }
+    private List<VehicleTypeResponse> convert(List<VehicleType> vehicles) {
+        return vehicles.stream().map(vehicleMapper::vehicleTypeEntityToResponse).collect(Collectors.toList());
     }
 }

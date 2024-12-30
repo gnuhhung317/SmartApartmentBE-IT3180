@@ -8,7 +8,8 @@ public enum HouseholdRole implements CodeNameProvider {
     MARRIAGE(1,"Vợ chồng"),
     PARENT(2,"Bố Mẹ"),
     RELATIVES(3, "Cô/Chú/Bác/Dì"),
-    OTHER(4,"Khác");
+    OWNER(4,"Chủ hộ"),
+    OTHER(5,"Khác");
 
 
     private final int code;
@@ -17,5 +18,9 @@ public enum HouseholdRole implements CodeNameProvider {
     HouseholdRole(int code, String name) {
         this.code = code;
         this.name = name;
+    }
+    @Override
+    public String getEnumName() {
+        return name();
     }
 }

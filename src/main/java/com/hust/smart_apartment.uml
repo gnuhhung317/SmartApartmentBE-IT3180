@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>D:/Code/Projects/SmartApartment-IT3180/src/main/java/com/hust/smart_apartment</OriginalElement>
+  <nodes>
+    <node x="1558.0" y="1386.0">com.hust.smart_apartment.mapper.VehicleMapper</node>
+    <node x="1526.5" y="546.0">com.hust.smart_apartment.service.ExcelService</node>
+    <node x="1596.5" y="366.0">com.hust.smart_apartment.config.SwaggerConfig</node>
+    <node x="1565.5" y="1026.0">com.hust.smart_apartment.service.InvoiceJobService</node>
+    <node x="1600.0" y="186.0">com.hust.smart_apartment.utils.StringUtil</node>
+    <node x="1210.0" y="1266.0">com.hust.smart_apartment.SmartApartmentApplication</node>
+    <node x="1510.5" y="666.0">com.hust.smart_apartment.service.impl.ExcelServiceImpl</node>
+    <node x="1383.0" y="726.0">com.hust.smart_apartment.controller.DonationController</node>
+    <node x="1506.5" y="906.0">com.hust.smart_apartment.service.ApartmentService</node>
+    <node x="1267.0" y="1026.0">com.hust.smart_apartment.repository.VehicleTypeRepository</node>
+    <node x="1390.0" y="486.0">com.hust.smart_apartment.dto.request.ResidentRequest</node>
+    <node x="1065.5" y="546.0">com.hust.smart_apartment.service.EnumService</node>
+    <node x="1485.5" y="126.0">com.hust.smart_apartment.dto.request.BaseRequest</node>
+    <node x="1313.0" y="1386.0">com.hust.smart_apartment.mapper.FeeTypeMapper</node>
+    <node x="1377.0" y="846.0">com.hust.smart_apartment.controller.ApartmentController</node>
+    <node x="1410.5" y="1086.0">com.hust.smart_apartment.service.impl.ApartmentServiceImpl</node>
+    <node x="52.5" y="1206.0">com.hust.smart_apartment.service.impl.CampaignServiceImpl</node>
+    <node x="1498.0" y="306.0">com.hust.smart_apartment.controller.FloorController</node>
+    <node x="536.0" y="1626.0">com.hust.smart_apartment.entity.Floor</node>
+    <node x="874.0" y="1086.0">com.hust.smart_apartment.repository.ApartmentRepository</node>
+    <node x="855.5" y="1566.0">com.hust.smart_apartment.utils.DbMapper</node>
+    <node x="1373.0" y="366.0">com.hust.smart_apartment.service.impl.AuthServiceImpl</node>
+    <node x="1029.5" y="666.0">com.hust.smart_apartment.service.impl.EnumServiceImpl</node>
+    <node x="1140.0" y="1086.0">com.hust.smart_apartment.service.impl.BuildingServiceImpl</node>
+    <node x="1256.0" y="306.0">com.hust.smart_apartment.repository.UserRepository</node>
+    <node x="1280.0" y="666.0">com.hust.smart_apartment.service.InvoiceService</node>
+    <node x="1144.0" y="726.0">com.hust.smart_apartment.dto.request.ApartmentRequest</node>
+    <node x="1157.5" y="366.0">com.hust.smart_apartment.dto.request.SearchRequest</node>
+    <node x="4.0" y="1566.0">com.hust.smart_apartment.constants.InvoiceStatus</node>
+    <node x="127.0" y="1626.0">com.hust.smart_apartment.constants.Gender</node>
+    <node x="1071.5" y="306.0">com.hust.smart_apartment.service.MailService</node>
+    <node x="1017.0" y="1026.0">com.hust.smart_apartment.service.impl.ResidentServiceImpl</node>
+    <node x="68.5" y="1026.0">com.hust.smart_apartment.service.CampaignService</node>
+    <node x="1190.5" y="486.0">com.hust.smart_apartment.entity.Period</node>
+    <node x="1037.0" y="1206.0">com.hust.smart_apartment.repository.ResidentChangeLogRepository</node>
+    <node x="926.0" y="486.0">com.hust.smart_apartment.dto.request.CampaignRequest</node>
+    <node x="-16.0" y="1746.0">com.hust.smart_apartment.dto.response.ResidentResponse</node>
+    <node x="197.5" y="1566.0">com.hust.smart_apartment.constants.HouseholdRole</node>
+    <node x="657.5" y="1026.0">com.hust.smart_apartment.service.impl.FeeTypeServiceImpl</node>
+    <node x="874.5" y="846.0">com.hust.smart_apartment.dto.response.CodeNameResponse</node>
+    <node x="608.0" y="1566.0">com.hust.smart_apartment.entity.VehicleType</node>
+    <node x="902.5" y="726.0">com.hust.smart_apartment.dto.BaseResponse</node>
+    <node x="324.0" y="46.0">com.hust.smart_apartment.dto.UserDto</node>
+    <node x="1188.0" y="1446.0">com.hust.smart_apartment.mapper.CampaignMapper</node>
+    <node x="1455.5" y="1446.0">com.hust.smart_apartment.entity.BaseEntity</node>
+    <node x="784.0" y="666.0">com.hust.smart_apartment.controller.FeeTypeController</node>
+    <node x="806.0" y="546.0">com.hust.smart_apartment.repository.VehicleRepository</node>
+    <node x="957.0" y="366.0">com.hust.smart_apartment.dto.request.InvoiceRequest</node>
+    <node x="989.0" y="1386.0">com.hust.smart_apartment.mapper.ResidentChangeLogMapper</node>
+    <node x="103.5" y="1806.0">com.hust.smart_apartment.dto.response.DonationResponse</node>
+    <node x="698.0" y="1626.0">com.hust.smart_apartment.entity.ResidentChangeLog</node>
+    <node x="1282.0" y="126.0">com.hust.smart_apartment.service.PeriodService</node>
+    <node x="686.5" y="486.0">com.hust.smart_apartment.controller.BuildingController</node>
+    <node x="1184.5" y="186.0">com.hust.smart_apartment.dto.request.FloorRequest</node>
+    <node x="569.0" y="546.0">com.hust.smart_apartment.controller.VehicleController</node>
+    <node x="830.5" y="306.0">com.hust.smart_apartment.dto.request.FeeTypeRequest</node>
+    <node x="881.5" y="1446.0">com.hust.smart_apartment.mapper.PeriodMapper</node>
+    <node x="663.5" y="726.0">com.hust.smart_apartment.controller.ResidentController</node>
+    <node x="962.0" y="1626.0">com.hust.smart_apartment.entity.FeeType</node>
+    <node x="187.5" y="1266.0">com.hust.smart_apartment.service.CodeGeneratorService</node>
+    <node x="787.0" y="1386.0">com.hust.smart_apartment.mapper.FloorMapper</node>
+    <node x="220.0" y="1746.0">com.hust.smart_apartment.dto.response.ResidentChangeLogResponse</node>
+    <node x="448.0" y="486.0">com.hust.smart_apartment.dto.model.QuickSearchInput</node>
+    <node x="1083.5" y="126.0">com.hust.smart_apartment.dto.request.LoginRequest</node>
+    <node x="740.0" y="906.0">com.hust.smart_apartment.repository.DonationRepository</node>
+    <node x="-128.5" y="1446.0">com.hust.smart_apartment.service.impl.CodeGeneratorServiceImpl</node>
+    <node x="676.0" y="1446.0">com.hust.smart_apartment.mapper.BuildingMapper</node>
+    <node x="716.0" y="366.0">com.hust.smart_apartment.entity.CodeGenerator</node>
+    <node x="901.5" y="1266.0">com.hust.smart_apartment.dto.model.QuickSearchParamsDTO</node>
+    <node x="1389.5" y="1206.0">com.hust.smart_apartment.service.impl.InvoiceJobServiceImpl</node>
+    <node x="593.5" y="306.0">com.hust.smart_apartment.dto.request.BuildingRequest</node>
+    <node x="351.5" y="846.0">com.hust.smart_apartment.repository.SearchRepository</node>
+    <node x="241.5" y="-14.0">com.hust.smart_apartment.entity.Donation</node>
+    <node x="173.5" y="46.0">com.hust.smart_apartment.dto.model.Order</node>
+    <node x="982.0" y="186.0">com.hust.smart_apartment.config.JwtProperties</node>
+    <node x="1275.5" y="546.0">com.hust.smart_apartment.service.impl.MailServiceImpl</node>
+    <node x="-142.0" y="1626.0">com.hust.smart_apartment.annotations.QuickSearchDomain</node>
+    <node x="210.0" y="486.0">com.hust.smart_apartment.dto.request.DonationRequest</node>
+    <node x="552.0" y="1386.0">com.hust.smart_apartment.mapper.DonationMapper</node>
+    <node x="880.0" y="126.0">com.hust.smart_apartment.controller.TestController</node>
+    <node x="338.5" y="546.0">com.hust.smart_apartment.service.VehicleService</node>
+    <node x="99.0" y="-14.0">com.hust.smart_apartment.constants.Role</node>
+    <node x="1143.5" y="846.0">com.hust.smart_apartment.service.impl.InvoiceServiceImpl</node>
+    <node x="633.5" y="846.0">com.hust.smart_apartment.service.FeeTypeService</node>
+    <node x="438.0" y="1806.0">com.hust.smart_apartment.dto.response.FloorResponse</node>
+    <node x="379.0" y="726.0">com.hust.smart_apartment.dto.CountDto</node>
+    <node x="1529.5" y="1266.0">com.hust.smart_apartment.mapper.BaseMapper</node>
+    <node x="475.0" y="366.0">com.hust.smart_apartment.repository.FloorRepository</node>
+    <node x="550.0" y="1746.0">com.hust.smart_apartment.dto.response.VehicleTypeResponse</node>
+    <node x="1048.5" y="1566.0">com.hust.smart_apartment.entity.Invoice</node>
+    <node x="699.5" y="1806.0">com.hust.smart_apartment.dto.response.CampaignResponse</node>
+    <node x="735.0" y="1206.0">com.hust.smart_apartment.repository.CodeGeneratorRepository</node>
+    <node x="306.0" y="1626.0">com.hust.smart_apartment.constants.FeeCategory</node>
+    <node x="439.5" y="1446.0">com.hust.smart_apartment.mapper.InvoiceMapper</node>
+    <node x="818.5" y="186.0">com.hust.smart_apartment.Test</node>
+    <node x="679.0" y="126.0">com.hust.smart_apartment.dto.request.PeriodRequest</node>
+    <node x="596.0" y="186.0">com.hust.smart_apartment.dto.ModifyDto</node>
+    <node x="576.5" y="1266.0">com.hust.smart_apartment.security.jwt.CustomUserDetailService</node>
+    <node x="1033.0" y="906.0">com.hust.smart_apartment.service.ResidentService</node>
+    <node x="356.0" y="306.0">com.hust.smart_apartment.controller.EnumController</node>
+    <node x="1135.5" y="1626.0">com.hust.smart_apartment.entity.Apartment</node>
+    <node x="60.0" y="1386.0">com.hust.smart_apartment.constants.CodeNameProvider</node>
+    <node x="1276.0" y="906.0">com.hust.smart_apartment.service.BuildingService</node>
+    <node x="486.0" y="126.0">com.hust.smart_apartment.security.jwt.JWTProvider</node>
+    <node x="221.0" y="666.0">com.hust.smart_apartment.repository.FeeTypeRepository</node>
+    <node x="413.0" y="1206.0">com.hust.smart_apartment.dto.request.ChangeLivingTypeRequest</node>
+    <node x="335.5" y="1026.0">com.hust.smart_apartment.repository.impl.SearchRepositoryImpl</node>
+    <node x="-124.5" y="1266.0">com.hust.smart_apartment.dto.request.UpdateApartmentRequest</node>
+    <node x="1409.5" y="1746.0">com.hust.smart_apartment.dto.response.VehicleResponse</node>
+    <node x="823.5" y="1746.0">com.hust.smart_apartment.dto.response.InvoiceSearchResponse</node>
+    <node x="86.0" y="546.0">com.hust.smart_apartment.annotations.DbColumnMapper</node>
+    <node x="1245.0" y="1566.0">com.hust.smart_apartment.entity.Building</node>
+    <node x="2.0" y="46.0">com.hust.smart_apartment.security.jwt.JwtFilter</node>
+    <node x="1389.0" y="186.0">com.hust.smart_apartment.service.AuthService</node>
+    <node x="984.0" y="1806.0">com.hust.smart_apartment.dto.response.FeeTypeResponse</node>
+    <node x="-32.5" y="486.0">com.hust.smart_apartment.repository.InvoiceRepository</node>
+    <node x="507.5" y="1086.0">com.hust.smart_apartment.constants.QuickSearchKeyOption</node>
+    <node x="306.0" y="1386.0">com.hust.smart_apartment.mapper.ApartmentMapper</node>
+    <node x="497.0" y="906.0">com.hust.smart_apartment.constants.CodeGeneratorType</node>
+    <node x="1107.0" y="1746.0">com.hust.smart_apartment.dto.response.BuildingResponse</node>
+    <node x="192.5" y="1446.0">com.hust.smart_apartment.mapper.ResidentMapper</node>
+    <node x="216.0" y="906.0">com.hust.smart_apartment.repository.CampaignRepository</node>
+    <node x="379.5" y="186.0">com.hust.smart_apartment.controller.AuthController</node>
+    <node x="112.5" y="846.0">com.hust.smart_apartment.service.DonationService</node>
+    <node x="-96.5" y="1086.0">com.hust.smart_apartment.exception.GlobalExceptionHandler</node>
+    <node x="256.0" y="366.0">com.hust.smart_apartment.dto.request.VehicleRequest</node>
+    <node x="279.0" y="126.0">com.hust.smart_apartment.config.SecurityConfig</node>
+    <node x="1327.5" y="1626.0">com.hust.smart_apartment.entity.Vehicle</node>
+    <node x="-21.0" y="906.0">com.hust.smart_apartment.controller.CampaignController</node>
+    <node x="414.0" y="1566.0">com.hust.smart_apartment.constants.LivingType</node>
+    <node x="1417.5" y="1566.0">com.hust.smart_apartment.entity.User</node>
+    <node x="1230.5" y="1806.0">com.hust.smart_apartment.dto.response.InvoiceResponse</node>
+    <node x="180.5" y="186.0">com.hust.smart_apartment.dto.FeeInvoiceDto</node>
+    <node x="-78.0" y="-14.0">com.hust.smart_apartment.constants.Operator</node>
+    <node x="104.0" y="726.0">com.hust.smart_apartment.repository.BuildingRepository</node>
+    <node x="176.5" y="1086.0">com.hust.smart_apartment.service.impl.DonationServiceImpl</node>
+    <node x="1477.5" y="1626.0">com.hust.smart_apartment.dto.AbstractAuditingDto</node>
+    <node x="-132.5" y="546.0">com.hust.smart_apartment.service.FloorService</node>
+    <node x="130.0" y="306.0">com.hust.smart_apartment.controller.InvoiceController</node>
+    <node x="1557.5" y="1806.0">com.hust.smart_apartment.dto.response.ApartmentResponse</node>
+    <node x="-139.5" y="726.0">com.hust.smart_apartment.repository.ResidentRepository</node>
+    <node x="97.5" y="126.0">com.hust.smart_apartment.entity.Campaign</node>
+    <node x="1642.0" y="1566.0">com.hust.smart_apartment.entity.Resident</node>
+    <node x="12.0" y="366.0">com.hust.smart_apartment.dto.request.RegisterRequest</node>
+    <node x="-8.5" y="666.0">com.hust.smart_apartment.service.impl.FloorServiceImpl</node>
+    <node x="462.5" y="666.0">com.hust.smart_apartment.service.impl.VehicleServiceImpl</node>
+    <node x="-127.5" y="1806.0">com.hust.smart_apartment.dto.response.PeriodResponse</node>
+    <node x="-144.0" y="46.0">com.hust.smart_apartment.dto.model.Filter</node>
+    <node x="-18.5" y="186.0">com.hust.smart_apartment.constants.AppConstants</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.hust.smart_apartment.dto.response.VehicleTypeResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.Floor" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="581.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.DonationServiceImpl" target="com.hust.smart_apartment.service.DonationService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="281.0" y="1000.0" />
+      <point x="201.0" y="1000.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.CodeGeneratorServiceImpl" target="com.hust.smart_apartment.service.CodeGeneratorService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1.0" y="1340.0" />
+      <point x="301.0" y="1340.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.constants.LivingType" target="com.hust.smart_apartment.constants.CodeNameProvider" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="481.0" y="1540.0" />
+      <point x="161.0" y="1540.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.InvoiceServiceImpl" target="com.hust.smart_apartment.service.InvoiceService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1241.0" y="820.0" />
+      <point x="1361.0" y="820.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.InvoiceJobServiceImpl" target="com.hust.smart_apartment.service.InvoiceJobService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1501.0" y="1180.0" />
+      <point x="1661.0" y="1180.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.Resident" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1701.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.Vehicle" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1381.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.VehicleMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.FloorServiceImpl" target="com.hust.smart_apartment.service.FloorService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="81.0" y="640.0" />
+      <point x="-59.0" y="640.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.repository.impl.SearchRepositoryImpl" target="com.hust.smart_apartment.repository.SearchRepository" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.constants.FeeCategory" target="com.hust.smart_apartment.constants.CodeNameProvider" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="381.0" y="1540.0" />
+      <point x="161.0" y="1540.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.ApartmentMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="401.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.CampaignResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="801.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.Apartment" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.AuthServiceImpl" target="com.hust.smart_apartment.service.AuthService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.FeeTypeServiceImpl" target="com.hust.smart_apartment.service.FeeTypeService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="761.0" y="1000.0" />
+      <point x="721.0" y="1000.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.ResidentMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="281.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.ResidentChangeLog" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="801.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.PeriodResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-39.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.Invoice" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1101.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.ResidentServiceImpl" target="com.hust.smart_apartment.service.ResidentService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.InvoiceSearchResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="941.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.Building" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1301.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.ExcelServiceImpl" target="com.hust.smart_apartment.service.ExcelService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.ApartmentResponse" target="com.hust.smart_apartment.dto.AbstractAuditingDto" relationship="GENERALIZATION">
+      <point x="51.75" y="-14.0" />
+      <point x="1712.75" y="1720.0" />
+      <point x="1581.0" y="1720.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.BuildingServiceImpl" target="com.hust.smart_apartment.service.BuildingService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1241.0" y="1000.0" />
+      <point x="1361.0" y="1000.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.VehicleResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="-45.75" y="-14.0" />
+      <point x="1455.25" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.VehicleServiceImpl" target="com.hust.smart_apartment.service.VehicleService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="561.0" y="640.0" />
+      <point x="421.0" y="640.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.FloorResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="521.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.VehicleResponse" target="com.hust.smart_apartment.dto.AbstractAuditingDto" relationship="GENERALIZATION">
+      <point x="45.75" y="-14.0" />
+      <point x="1546.75" y="1720.0" />
+      <point x="1581.0" y="1720.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.FeeTypeMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1401.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.FeeTypeResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1081.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.CampaignMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1281.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.InvoiceMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="521.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.FloorMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="861.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.DonationResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="201.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.constants.Gender" target="com.hust.smart_apartment.constants.CodeNameProvider" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="181.0" y="1540.0" />
+      <point x="161.0" y="1540.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.CampaignServiceImpl" target="com.hust.smart_apartment.service.CampaignService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.EnumServiceImpl" target="com.hust.smart_apartment.service.EnumService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1121.0" y="640.0" />
+      <point x="1141.0" y="640.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.ResidentResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="81.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.constants.InvoiceStatus" target="com.hust.smart_apartment.constants.CodeNameProvider" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="81.0" y="1540.0" />
+      <point x="161.0" y="1540.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.PeriodMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="961.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.VehicleType" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="681.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.MailServiceImpl" target="com.hust.smart_apartment.service.MailService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1361.0" y="460.0" />
+      <point x="1141.0" y="460.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.constants.HouseholdRole" target="com.hust.smart_apartment.constants.CodeNameProvider" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="281.0" y="1540.0" />
+      <point x="161.0" y="1540.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.BuildingMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="761.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.ResidentChangeLogMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1121.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.BuildingResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1201.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.ResidentChangeLogResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="361.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.ApartmentResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="-51.75" y="-14.0" />
+      <point x="1609.25" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.dto.response.InvoiceResponse" target="com.hust.smart_apartment.annotations.QuickSearchDomain" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1321.0" y="1700.0" />
+      <point x="661.0" y="1700.0" />
+      <point x="661.0" y="1680.0" />
+      <point x="-39.0" y="1680.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.service.impl.ApartmentServiceImpl" target="com.hust.smart_apartment.service.ApartmentService" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1521.0" y="1000.0" />
+      <point x="1601.0" y="1000.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.FeeType" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1021.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.entity.User" target="com.hust.smart_apartment.entity.BaseEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1461.0" y="1540.0" />
+      <point x="1201.0" y="1540.0" />
+      <point x="1201.0" y="1500.0" />
+      <point x="1521.0" y="1500.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.hust.smart_apartment.mapper.DonationMapper" target="com.hust.smart_apartment.mapper.BaseMapper" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="641.0" y="1360.0" />
+      <point x="1641.0" y="1360.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.34100642398286946" showDependencies="false" x="324.2906205651502" y="892.9999999999998" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

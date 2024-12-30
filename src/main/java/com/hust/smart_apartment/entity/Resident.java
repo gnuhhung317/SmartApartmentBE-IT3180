@@ -23,6 +23,7 @@ public class Resident extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long residentId;
 
+    @Column(name = "full_name",nullable = false)
     private String fullName;
 
     private Date dateOfBirth;
@@ -41,9 +42,13 @@ public class Resident extends BaseEntity {
     @Column(name = "gender",nullable = false)
     private Gender gender;
 
+    private String job;
+
+    private String hometown;
+
     private String avatar = "https://pic.re/image";
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "apartment_id",nullable = false)
+    @JoinColumn(name = "apartment_id")
     private Apartment livingApartment;
 }

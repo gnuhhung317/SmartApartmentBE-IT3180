@@ -2,6 +2,7 @@ package com.hust.smart_apartment.dto.response;
 
 import com.hust.smart_apartment.annotations.DbColumnMapper;
 import com.hust.smart_apartment.annotations.QuickSearchDomain;
+import com.hust.smart_apartment.constants.FeeCategory;
 import com.hust.smart_apartment.constants.QuickSearchKeyOption;
 import com.hust.smart_apartment.dto.AbstractAuditingDto;
 import com.hust.smart_apartment.dto.model.QuickSearchInput;
@@ -20,7 +21,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@QuickSearchDomain(tableName = "vehicles")
+@QuickSearchDomain(tableName = "vehicles_search_view")
 public class VehicleResponse extends AbstractAuditingDto {
 
     @DbColumnMapper("vehicle_id")
@@ -37,7 +38,20 @@ public class VehicleResponse extends AbstractAuditingDto {
     @DbColumnMapper("apartment_id")
     private Long apartmentId;
 
+    @DbColumnMapper("vehicle_type_id")
+    private Long vehicleTypeId;
+
+    @DbColumnMapper("vehicle_type_name")
+    private String vehicleTypeName;
+
+    @DbColumnMapper("apartment_name")
+    private String apartmentName;
+
+    @DbColumnMapper("apartment_code")
+    private String apartmentCode;
+
     private VehicleTypeResponse vehicleType;
 
     private ApartmentResponse apartment;
+
 }

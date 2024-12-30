@@ -15,4 +15,8 @@ public enum InvoiceStatus implements CodeNameProvider{
 
     private final int code;
     private final String name;
+    @Override
+    public String getEnumName() {
+        return name();
+    }
 }
