@@ -1,5 +1,6 @@
 package com.hust.smart_apartment.controller;
 
+import com.hust.smart_apartment.constants.FeeCategory;
 import com.hust.smart_apartment.dto.BaseResponse;
 import com.hust.smart_apartment.dto.ModifyDto;
 import com.hust.smart_apartment.dto.request.FeeTypeRequest;
@@ -27,9 +28,9 @@ public class FeeTypeController {
         return BaseResponse.ok(feeTypeService.create(request));
     }
 
-    @PutMapping("/{id}")
-    public BaseResponse<FeeTypeResponse> update(@PathVariable Long id, @RequestBody FeeTypeRequest request) {
-        return BaseResponse.ok(feeTypeService.update(id, request));
+    @PutMapping("/{category}")
+    public BaseResponse<ModifyDto> update(@PathVariable FeeCategory category, @RequestBody FeeTypeRequest request) {
+        return BaseResponse.ok(feeTypeService.update(category, request));
     }
 
     @DeleteMapping("/{id}")
@@ -41,7 +42,4 @@ public class FeeTypeController {
     public BaseResponse<Page<FeeTypeResponse>> search(@RequestBody SearchRequest request) {
         return BaseResponse.ok(feeTypeService.search(request));
     }
-
-
-
 }

@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,7 +29,10 @@ public class DonationResponse {
     @DbColumnMapper("campaign_id")
     private Long campaignId;
 
-    private Apartment apartment;
+    @DbColumnMapper("donation_date")
+    private Date donationDate;
 
-    private Campaign campaign;
+    private ApartmentResponse apartment;
+
+    private CampaignResponse campaign;
 }

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,6 +22,9 @@ public class Donation {
 
     @Column(name = "amount")
     private Integer amount;
+
+    @Column(name = "donation_date")
+    private Date donationDate;
 
     @ManyToOne
     @JoinColumn(name = "apartment_id")

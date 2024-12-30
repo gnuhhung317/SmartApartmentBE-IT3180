@@ -3,6 +3,8 @@ package com.hust.smart_apartment.constants;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Set;
+
 @Getter
 @AllArgsConstructor
 public enum FeeCategory implements CodeNameProvider{
@@ -15,7 +17,8 @@ public enum FeeCategory implements CodeNameProvider{
 
     private final int code;
     private final String name;
-
+    public static final Set<FeeCategory> parkings = Set.of(PARKING_MOTORCYCLE, PARKING_CAR, PARKING_BICYCLE, PARKING_OTHER);
+    public static final Set<FeeCategory> services = Set.of(SERVICE_FEE, MANAGEMENT_FEE);
     @Override
     public String getEnumName() {
         return name();
