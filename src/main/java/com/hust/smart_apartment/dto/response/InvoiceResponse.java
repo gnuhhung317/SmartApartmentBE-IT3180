@@ -41,6 +41,8 @@ public class InvoiceResponse {
     private Double paidAmount;
     @DbColumnMapper("status")
     private String status;
+    @DbColumnMapper("note")
+    private String note;
 
     private List<FeeInvoiceDto> fees;
 }

@@ -44,6 +44,9 @@ public class Invoice extends BaseEntity {
 
     private String status;
 
+    @Lob
+    private String note;
+
     @JdbcTypeCode(SqlTypes.JSON)
     private List<FeeInvoiceDto> fees;
 

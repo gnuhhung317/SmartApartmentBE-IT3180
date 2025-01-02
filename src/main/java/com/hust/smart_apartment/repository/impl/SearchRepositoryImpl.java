@@ -168,7 +168,7 @@ public class SearchRepositoryImpl<T> implements SearchRepository<T> {
                     condition.append(" <= :").append(filter.getName()).append("To");
                     break;
                 case LIKE:
-                    condition.append(" LIKE CONCAT('%',:").append(filter.getName()).append(",'%')");
+                    condition.append(" LIKE CONCAT('%',:").append(filter.getName()).append(",'%')").append(" COLLATE utf8mb4_general_ci ");
                     break;
                 case IN:
                     condition.append(" IN :").append(filter.getName());
@@ -202,7 +202,7 @@ public class SearchRepositoryImpl<T> implements SearchRepository<T> {
                 continue;
             }
             String cond = quickSearchInput.keyOption().getValue()
-                    .replace("%COLUMN_NAME%", quickSearchInput.columnName());
+                    .replace("%COLUMN_NAME%", quickSearchInput.columnName())+" COLLATE utf8mb4_general_ci ";
             conditionList.add(cond);
         }
     }

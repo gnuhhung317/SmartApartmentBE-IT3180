@@ -30,7 +30,7 @@ public class FeeTypeResponse {
     @DbColumnMapper("unit_price")
     private Long unitPrice;
 
-    @QuickSearchInput(columnName = "name",keyOption = QuickSearchKeyOption.ILIKE)
+    @QuickSearchInput(columnName = "name",keyOption = QuickSearchKeyOption.LIKE)
     @DbColumnMapper("description")
     private String description;
 

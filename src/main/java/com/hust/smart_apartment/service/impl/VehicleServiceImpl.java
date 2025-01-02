@@ -111,6 +111,7 @@ public class VehicleServiceImpl implements VehicleService {
                 VehicleType.builder().feeCategory(FeeCategory.PARKING_BICYCLE).unitPrice(10000).build(),
                 VehicleType.builder().feeCategory(FeeCategory.PARKING_OTHER).unitPrice(10000).build()
         );
+        vehicleRepository.deleteAll();
         vehicleTypeRepository.deleteAll();
         return convert(vehicleTypeRepository.saveAll(vehicleTypes));
     }

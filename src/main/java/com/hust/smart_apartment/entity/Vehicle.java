@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -26,8 +28,10 @@ public class Vehicle extends BaseEntity{
     @Column(name = "name",nullable = false)
     private String name;
 
+    private Date registerDate;
+
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "vehicle_type_id")
+    @JoinColumn(name = "vehicle_type_id",nullable = false)
     private VehicleType vehicleType;
 
     @ManyToOne(fetch = FetchType.EAGER)

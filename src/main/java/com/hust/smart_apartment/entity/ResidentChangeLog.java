@@ -51,7 +51,7 @@ public class ResidentChangeLog extends BaseEntity{
     private LivingType changeType;
 
     @Column(name = "change_date")
-    private LocalDateTime changeDate;
+    private Date changeDate;
 
     @Column(name = "notes")
     private String notes;

@@ -17,8 +17,10 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -83,6 +85,9 @@ public class FeeTypeServiceImpl implements FeeTypeService {
 
     @Override
     public Page<FeeTypeResponse> search(SearchRequest request) {
-        return searchRepository.search(request, FeeTypeResponse.class);
+        Page<FeeTypeResponse> search = searchRepository.search(request, FeeTypeResponse.class);
+        List<Long> feeIds = search.stream().map(FeeTypeResponse::getFeeTypeId).toList();
+        List<FeeTypeResponse> feeTypes = feeTypeRepository.findAllById(feeIds).stream().map(feeTypeMapper::entityToResponse).toList();
+        return new PageImpl<>(feeTypes, search.getPageable(), feeTypes.size());
     }
 }

@@ -19,30 +19,15 @@ public class InvoiceSearchResponse {
     private Long id;
 
     @DbColumnMapper("invoice_code")
-    @QuickSearchInput(columnName = "invoice_code", keyOption = QuickSearchKeyOption.ILIKE)
+    @QuickSearchInput(columnName = "invoice_code", keyOption = QuickSearchKeyOption.LIKE)
     private String invoiceCode;
 
     @DbColumnMapper("apartment_id")
     private Long apartmentId;
 
-    @DbColumnMapper("due_date")
-    private Date dueDate;
+    @DbColumnMapper("note")
+    @QuickSearchInput(columnName = "note", keyOption = QuickSearchKeyOption.LIKE)
+    private String note;
 
-    @DbColumnMapper("start_date")
-    private Date startDate;
 
-    @DbColumnMapper("completed_pay_date")
-    private Date completedPayDate;
-
-    @DbColumnMapper("last_pay_date")
-    private Date lastPayDate;
-
-    @DbColumnMapper("total_amount")
-    private Double totalAmount;
-
-    @DbColumnMapper("paid_amount")
-    private Double paidAmount;
-
-    @DbColumnMapper("status")
-    private String status;
 }

@@ -9,6 +9,7 @@ import com.hust.smart_apartment.constants.LivingType;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Builder
 @Getter
@@ -50,7 +51,7 @@ public class ResidentChangeLogResponse {
     private CodeNameResponse changeType;
 
     @DbColumnMapper(value = "change_date")
-    private LocalDateTime changeDate;
+    private Date changeDate;
 
     @DbColumnMapper(value = "notes")
     private String notes;

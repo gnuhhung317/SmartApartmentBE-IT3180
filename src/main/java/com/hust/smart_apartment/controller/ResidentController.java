@@ -1,6 +1,7 @@
 package com.hust.smart_apartment.controller;
 
 import com.hust.smart_apartment.dto.BaseResponse;
+import com.hust.smart_apartment.dto.ModifyDto;
 import com.hust.smart_apartment.dto.request.ChangeLivingTypeRequest;
 import com.hust.smart_apartment.dto.request.ResidentRequest;
 import com.hust.smart_apartment.dto.request.SearchRequest;
@@ -23,6 +24,16 @@ public class ResidentController {
     @PostMapping("change-living-type")
     public BaseResponse<ResidentChangeLogResponse> changeLivingType(@RequestParam("residentId") Long id, @RequestBody ChangeLivingTypeRequest request) {
         return BaseResponse.ok(residentService.changeLivingType(id, request));
+    }
+
+    @PutMapping("change-logs/{changeLogId}")
+    public BaseResponse<ResidentChangeLogResponse> updateLivingType(@PathVariable("changeLogId") Long changeLogId, @RequestBody ChangeLivingTypeRequest request) {
+        return BaseResponse.ok(residentService.updateLivingType(changeLogId, request));
+    }
+
+    @DeleteMapping("change-logs/{changeLogId}")
+    public BaseResponse<ModifyDto> deleteLivingType(@PathVariable("changeLogId") Long changeLogId) {
+        return BaseResponse.ok(residentService.deleteLivingType(changeLogId));
     }
 
     @GetMapping("/{id}")

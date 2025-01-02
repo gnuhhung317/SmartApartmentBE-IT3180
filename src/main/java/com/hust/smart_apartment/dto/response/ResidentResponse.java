@@ -62,6 +62,11 @@ public class ResidentResponse {
     @DbColumnMapper("contact")
     private String contact;
 
+    @DbColumnMapper("apartment_id")
+    private Long apartmentId;
+
+    private ApartmentResponse apartment;
+
     public void setCurrentLivingTypeId(int currentLivingTypeId) {
         this.currentLivingTypeId = currentLivingTypeId;
         currentLivingType = LivingType.values()[currentLivingTypeId].toCodeNameResponse();

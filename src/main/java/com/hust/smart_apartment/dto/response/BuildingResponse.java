@@ -17,11 +17,11 @@ public class BuildingResponse {
     @DbColumnMapper("id")
     private Long id;
 
-    @QuickSearchInput(columnName = "building_code",keyOption = QuickSearchKeyOption.ILIKE)
+    @QuickSearchInput(columnName = "building_code",keyOption = QuickSearchKeyOption.LIKE)
     @DbColumnMapper("building_code")
     private String buildingCode;
 
-    @QuickSearchInput(columnName = "building_name",keyOption = QuickSearchKeyOption.ILIKE)
+    @QuickSearchInput(columnName = "building_name",keyOption = QuickSearchKeyOption.LIKE)
     @DbColumnMapper("building_name")
     private String buildingName;
 }
